@@ -9,6 +9,5 @@
 		<property name="hibernate.connection.url">jdbc:mysql://localhost/bookdb</property>
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">root</property>
-
 	</session-factory>
 </hibernate-configuration>
