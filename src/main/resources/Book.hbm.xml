@@ -3,8 +3,8 @@
 "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="demo.Book" table="Book">
-		<id name="id" type="Integer">
+	<class name="demo.Book" table="book">
+		<id name="id" type="java.lang.Integer">
 			<column name="id"></column>
 			<generator class="increment"></generator>
 		</id>
