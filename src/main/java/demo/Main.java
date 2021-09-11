@@ -14,7 +14,7 @@ public class Main {
 	    sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		Book book = new Book("Hibernate Course Self Study Again", "Ayush");
+		Book book = new Book("Hibernate Course Self Study Again And Again", "Ayush");
 		session.save(book);
 		tx.commit();
 		session.close();
