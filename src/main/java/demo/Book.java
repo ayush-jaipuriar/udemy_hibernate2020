@@ -10,6 +10,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "book")
 public class Book {
+	
+	@Column(name = "book_name")
+	String bookName;
+
+	@Column(name = "book_author")
+	String bookAuthor;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,13 +31,7 @@ public class Book {
 		this.bookName = bookName;
 		this.bookAuthor = bookAuthor;
 	}
-
-	@Column(name = "book_name")
-	String bookName;
-
-	@Column(name = "book_author")
-	String bookAuthor;
-
+	
 	public Book(String bookName, String bookAuthor) {
 		super();
 		this.bookName = bookName;

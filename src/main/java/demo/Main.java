@@ -13,7 +13,7 @@ public class Main {
 		SessionFactory sessionFactory = null;
 	    sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();				
+		Transaction tx = session.beginTransaction();					
 		tx.commit();
 		session.close();
 		HibernateUtil.closeSessionFactory(sessionFactory);		
@@ -24,6 +24,16 @@ public class Main {
 	 */
 	private static void getBook(Session session) {
 		Book book = session.get(Book.class, 2);
+		System.out.println(book.toString());
+	}
+	
+	/**
+	 * @param session
+	 */
+	private static void getBookWithDirtyChecking(Session session) {
+		Book book = session.get(Book.class, 2);
+		System.out.println(book.toString());
+		book.setBookAuthor("R.L Stine");
 		System.out.println(book.toString());
 	}
 
