@@ -14,6 +14,17 @@ public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
+	
+	public Book() {
+		
+	}
+
+	public Book(Integer id, String bookName, String bookAuthor) {
+		super();
+		this.id = id;
+		this.bookName = bookName;
+		this.bookAuthor = bookAuthor;
+	}
 
 	@Column(name = "book_name")
 	String bookName;
