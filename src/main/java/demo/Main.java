@@ -11,12 +11,20 @@ public class Main {
 	public static void main(String[] args) {
 
 		SessionFactory sessionFactory = null;
-	    sessionFactory = HibernateUtil.getSessionFactory();
+		sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();		
+		Transaction tx = session.beginTransaction();
 		tx.commit();
 		session.close();
-		HibernateUtil.closeSessionFactory(sessionFactory);		
+		HibernateUtil.closeSessionFactory(sessionFactory);
+	}
+
+	/**
+	 * @param session
+	 */
+	private static void deleteBook(Session session) {
+		Book book = getBook(session);
+		session.delete(book);
 	}
 
 	/**
@@ -32,11 +40,11 @@ public class Main {
 	 * @param session
 	 */
 	private static Book getBook(Session session) {
-		Book book = session.get(Book.class, 2);
+		Book book = session.get(Book.class, 3);
 		System.out.println(book.toString());
 		return book;
 	}
-	
+
 	/**
 	 * @param session
 	 */
@@ -52,8 +60,8 @@ public class Main {
 	 * @return
 	 */
 	private static Integer saveBook(Session session) {
-		Book book = new Book("Hibernate Check save get performed", "Ayush");		
-		return (Integer) session.save(book);		
+		Book book = new Book("Hibernate Check save get performed", "Ayush");
+		return (Integer) session.save(book);
 	}
 
 }
