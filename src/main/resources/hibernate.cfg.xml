@@ -11,6 +11,6 @@
 		<property name="hibernate.connection.password">root</property>
 		
 		<!-- mapping file--> 
-		<mapping class="demo.Book" />
+		<mapping class="models.Book" />
 	</session-factory>
 </hibernate-configuration>
