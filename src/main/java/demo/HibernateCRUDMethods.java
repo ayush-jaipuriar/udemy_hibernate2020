@@ -4,7 +4,7 @@ import org.hibernate.Session;
 
 import models.Book;
 
-public class HibernateCRUDMethods {
+public class HibernateCrudMethods {
 
 	/**
 	 * @param session

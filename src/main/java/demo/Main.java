@@ -6,8 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import utils.HibernateUtil;
-import models.Book;
-import demo.HibernateCRUDMethods;
 
 public class Main {
 
