@@ -13,7 +13,7 @@ public class Main {
 		SessionFactory sessionFactory = null;
 		sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
+		Transaction tx = session.beginTransaction();		
 		tx.commit();
 		session.close();
 		HibernateUtil.closeSessionFactory(sessionFactory);
@@ -40,7 +40,7 @@ public class Main {
 	 * @param session
 	 */
 	private static Book getBook(Session session) {
-		Book book = session.get(Book.class, 3);
+		Book book = session.get(Book.class, 2);
 		System.out.println(book.toString());
 		return book;
 	}

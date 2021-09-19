@@ -10,19 +10,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "book")
 public class Book {
-	
-	@Column(name = "book_name")
-	String bookName;
-
-	@Column(name = "book_author")
-	String bookAuthor;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
-	
+
+	@Column(name = "book_name")
+	private String bookName;
+
+	@Column(name = "book_author")
+	private String bookAuthor;
+
+	@Column(name = "category")
+	private String category;
+
+	@Column(name = "num_of_copies")
+	private Integer numOfCopies;
+
 	public Book() {
-		
+
 	}
 
 	public Book(Integer id, String bookName, String bookAuthor) {
@@ -31,7 +37,7 @@ public class Book {
 		this.bookName = bookName;
 		this.bookAuthor = bookAuthor;
 	}
-	
+
 	public Book(String bookName, String bookAuthor) {
 		super();
 		this.bookName = bookName;
@@ -62,9 +68,26 @@ public class Book {
 		this.bookAuthor = bookAuthor;
 	}
 
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Integer getNumOfCopies() {
+		return numOfCopies;
+	}
+
+	public void setNumOfCopies(Integer numOfCopies) {
+		this.numOfCopies = numOfCopies;
+	}
+
 	@Override
 	public String toString() {
-		return "Book [bookName=" + bookName + ", bookAuthor=" + bookAuthor + "]";
+		return "Book [id=" + id + ", bookName=" + bookName + ", bookAuthor=" + bookAuthor + ", category=" + category
+				+ ", numOfCopies=" + numOfCopies + "]";
 	}
 
 }
